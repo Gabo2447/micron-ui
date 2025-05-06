@@ -1,0 +1,57 @@
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  box-shadow: 0px 0px 24px 0px #0b2138;
+  background: radial-gradient(circle at center, rgba(15, 44, 75, 0.1) 0%, rgba(17, 31, 53, 0.1) 100%);
+  backdrop-filter: blur(8px);             /* Desenfoque */
+  -webkit-backdrop-filter: blur(8px);     /* Safari soporte */
+  border-radius: 8px;                     /* Opcional: bordes redondeados */
+  color: #fff;                            /* Color del texto */
+
+}
+
+.header__div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.header__div-img {
+  filter: invert(1);
+}
+
+.header__div-title {
+  font-size: 1.5rem;
+}
+
+.header__nav-ul {
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.header__nav-a {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.header__nav-li, .header__nav-a {
+  transition: all 0.2s;
+}
+
+.header__nav-li:hover {
+  transform: translateY(-3px);
+}
+
+.header__nav-a:hover {
+  color: #4364F7;
+}
