@@ -60,7 +60,7 @@
 
 .radial-gradient {
   color: transparent;
-  background: linear-gradient(90deg, rgba(0, 210, 241, 1) 0%, rgba(1, 130, 166, 1) 100%);
+  background: linear-gradient(90deg, rgba(0, 210, 241, 1) 0%, rgb(0, 148, 189) 100%);
   background-clip: text;
   filter: brightness(1.8);
 }
@@ -73,7 +73,6 @@
   grid-template-columns: 2fr 2fr 1.5fr;
   grid-template-rows: auto auto;
   gap: 20px;
-  width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
