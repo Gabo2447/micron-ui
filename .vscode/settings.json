@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "update",
     "pages",
-    "home"
+    "home",
+    "news"
   ]
 }
