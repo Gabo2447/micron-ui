@@ -1,17 +1,20 @@
 ---
-import "../styles/card.css";
-import Components from "../icons/Components.astro";
-import Card from "../icons/Card.astro";
-import Dashboard from '../icons/Dashboard.astro';
-import Form from "../icons/Form.astro";
+import "@/styles/card.css";
+import Components from "@/icons/Components.astro";
+import Card from "@/icons/Card.astro";
+import Dashboard from "@/icons/Dashboard.astro";
+import Form from "@/icons/Form.astro";
 ---
 
 <main>
   <div class="main__content-title">
     <h1 class="content__h1">Sistema de componentes moderno y accesible</h1>
-    <p>Colección de componentes accesibles y personalizables para formularios, dashboards, cards y botones</p>
+    <p>
+      Colección de componentes accesibles y personalizables para formularios,
+      dashboards, cards y botones
+    </p>
     <div class="button-container">
-      <a href="/components" class="content__a">
+      <a href="/overview/introduction" class="content__a">
         <button class="content__btn">
           <Components />
           Explorar Componentes
@@ -53,7 +56,7 @@ import Form from "../icons/Form.astro";
       </span>
 
       <span class="content__section-title">Formularios Accesibles</span>
-      
+
       <p class="content__p">
         Crea formularios profesionales con inputs, selects y validaciones
         visuales, listos para usar y totalmente accesibles desde el primer
@@ -63,18 +66,30 @@ import Form from "../icons/Form.astro";
   </div>
 
   <div class="main__content-news">
-    <h2 class="content__news-title">Novedades de <span class="radial-gradient">Micron v0.0.1</span></h2>
+    <h2 class="content__news-title">
+      Novedades de <span class="radial-gradient">Micron v0.0.1</span>
+    </h2>
     <div class="grid-container">
-      <div class="item item1 ">
+      <div class="item item1">
         ¡Accesibilidad Total!
-        <p class="item-p">Todos los componentes cumplen con WCAG 2.1 AA, incluyen roles ARIA y navegación por teclado. Diseñados para ser inclusivos desde el primer momento</p>
+        <p class="item-p">
+          Todos los componentes cumplen con WCAG 2.1 AA, incluyen roles ARIA y
+          navegación por teclado. Diseñados para ser inclusivos desde el primer
+          momento
+        </p>
       </div>
-      <a href="/components/" class="item item2"><Components /><span class="subtitle">20</span> Componentes reutlizables</a>
+      <a href="/components/" class="item item2"
+        ><Components /><span class="subtitle">20</span> Componentes reutlizables</a
+      >
       <a href="/overview/getting-started/" class="item item3">Empezar ✌️</a>
       <div class="item item4">
         Inspirada en los Mejores
-        <p class="item-p">Inspirada en los Mejores
-          Combinando lo mejor de TailwindCSS, PaceUI y MictlanUI: utilidades modernas, componentes listos y máxima flexibilidad para tus proyectos</p>
+        <p class="item-p">
+          Inspirada en los Mejores Combinando lo mejor de TailwindCSS, PaceUI y
+          MictlanUI: utilidades modernas, componentes listos y máxima
+          flexibilidad para tus proyectos
+        </p>
       </div>
     </div>
+  </div>
 </main>

@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content';
+import "@/styles/global.css";
+
+const components = await getCollection('components');
+const overview = await getCollection('overview');
+const currentPath = Astro.url.pathname;
+
+const ordenPersonalizado = [
+  'Introducción',
+  'Componentes'
+]
+---
+<div>
+  <nav class="sidebar">
+    <ul class="sidebar__ul">
+      <li class="sidebar__li">
+        <h3 class="sidebar__title">{ordenPersonalizado[0]}</h3>
+        {
+          overview.map(c => {
+            return(
+            <a href={`/overview/${c.slug}`} class={`sidebar__ancler${currentPath === `/overview/${c.slug}` ? ' active' : ''}`}>{c.data.name}</a>
+          )})
+        }
+      </li>
+    
+      <li class="sidebar__li">
+        <h3 class="sidebar__title">{ordenPersonalizado[1]}</h3>
+        {
+          components.map(c => (
+            <a href={`/components/${c.slug}`} class={`sidebar__ancler${currentPath === `/components/${c.slug}` ? ' active' : ''}`}>{c?.data?.name}</a>
+          ))
+        }
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+  .sidebar {
+    display: block;
+
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #4a5568 transparent; /* Firefox: thumb color y track color */
+
+    max-width: 250px;
+    min-width: 250px;
+    height: 95vh;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+  }
+  .sidebar::-webkit-scrollbar {
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+  }
+
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #fbfafb66;
+    border-radius: 4px;
+  }
+
+  .sidebar__ul, .sidebar__li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sidebar__ul { gap: 20px; }
+  .sidebar__li { gap: 8px; }
+
+  .sidebar__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .sidebar__ancler {
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-inline: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar__ancler:hover {
+    background-color: rgba(63, 63, 70, 0.3);
+    color: rgb(67, 100, 247);;
+  }
+
+  .sidebar__ancler.active {
+    background-color: rgba(63, 63, 70, 0.3);
+    color: rgb(67, 100, 247);
+  }
+</style>

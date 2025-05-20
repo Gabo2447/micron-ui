@@ -1,0 +1,50 @@
+---
+import Github from "@/icons/Github.astro";
+---
+
+<footer class="footer">
+  <div class="container__footer">
+    <span class="footer__information">
+      Creado y usado por <a class="footer__a user__strong" href="https://github.com/Gabo2447">Gabo2447</a> con ⭐ en <strong>2025</strong>. 
+      Basado en <a class="footer__a" href="https://www.styple.dev">styple</a>, <a class="footer__a" href="https://https://www.heroui.com/">HeroUI</a>, <a class="footer__a" href="https://https://flowbite.com/">Flowbite</a> y <a class="footer__a" href="https://mictlanuidev.netlify.app/">MictanUI</a>
+    </span>
+    <ul class="footer__social">
+      <li><a class="footer__a" href="/" title="Inicio">Inicio</a></li>
+      <li><a class="footer__a" target="_blank" href="mailto:gabrieldeolival2@gmail.com" title="Contacto">Contacto</a></li>
+      <li><a class="footer__a" target="_blank" href="https://github.com/Gabo2447" title="Github"><Github width="20" height="20" /></a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    cursor: default;
+    color: oklch(.551 .027 264.364);
+    width: 100%;
+    background-color: color-mix(in oklab, #fff 5%,transparent);
+    padding-inline: 1.5rem;
+  }
+  
+  .container__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+  }
+
+  .user__strong {
+    color: #4364F7;
+  }
+
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer__a {
+    transition: color .2s;
+  }
+  .footer__a:hover {
+    text-decoration: underline;
+  }
+</style>

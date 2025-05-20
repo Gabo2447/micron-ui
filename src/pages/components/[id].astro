@@ -1,0 +1,84 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Sidebar from "@/components/landing/Sidebar.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const components = await getCollection('components')
+
+  return components.map((component) => ({
+    params: { id: component.slug },
+    props: { component }
+  }))
+}
+
+const { component } = Astro.props;
+const { Content } = await component.render();
+---
+
+<Layout>
+  <Sidebar />
+  <main class="main">
+    <h1 class="main__title">{component?.data?.name}</h1>
+    <p class="main__subtitle">{component?.data?.description}</p>
+    <Content />
+  </main>
+</Layout>
+
+<style>
+  .main {
+  margin-left: 250px;
+  max-width: 992px;
+  padding: 32px;
+  min-height: fit-content;
+  border-radius: 0.8rem;
+  text-align: start;
+  background-color: color-mix(in oklab, #fff 5%, transparent);
+}
+  .main__title {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  main.main p.main__subtitle {
+    font-size: 1.25rem;
+    color: oklch(.707 .022 261.325);
+    font-weight: 600;
+    text-align: start;
+  }
+
+  .main :global(h1) {
+    margin: 0;
+    padding-block: 2rem 1rem;
+    text-align: start;
+  }
+  
+
+  .main :global(h2) {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.33;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .main :global(p) {
+    text-align: start;
+    line-height: 1.75;
+    color: oklch(.872 .01 258.338);
+    font-size: 1.05rem;
+    max-width: 100%;
+    margin-block: 0.5rem;
+    padding-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .main :global(ul) {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .main :global(li) {
+    margin-block: 5px;
+  }
+</style>

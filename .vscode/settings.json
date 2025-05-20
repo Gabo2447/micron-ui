@@ -6,5 +6,6 @@
     "news",
     "accesibility",
     "font"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

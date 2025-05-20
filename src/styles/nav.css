@@ -7,12 +7,17 @@ header {
   align-items: center;
   padding: 10px 2%;
   box-shadow: 0px 0px 24px 0px #0b2138;
-  background: radial-gradient(circle at center, rgba(15, 44, 75, 0.1) 0%, rgba(17, 31, 53, 0.1) 100%);
-  backdrop-filter: blur(8px);             /* Desenfoque */
-  -webkit-backdrop-filter: blur(8px);     /* Safari soporte */
-  border-radius: 8px;                     /* Opcional: bordes redondeados */
-  color: #fff;                            /* Color del texto */
+  background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  color: var(--color-white);
 
+}
+
+.header-spacer {
+  height: 56px;
+  width: 100%;
 }
 
 .header__div {
@@ -23,7 +28,7 @@ header {
 }
 
 .header__div-img {
-  filter: invert(1);
+  filter: invert(1); 
 }
 
 .header__div-title {
@@ -53,5 +58,5 @@ header {
 }
 
 .header__nav-a:hover {
-  color: #4364F7;
+  color: var(--color-blue-500);
 }

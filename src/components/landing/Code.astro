@@ -1,0 +1,14 @@
+---
+import Copy from "@/icons/Copy.astro"
+
+const { code } = Astro.props
+---
+
+<div class="div__code">
+  <span class="text__code">{code}</span>
+  <button id="btn_copy">
+    <span class="copy__container">
+      <Copy />
+    </span>
+  </button>
+</div>
